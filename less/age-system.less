@@ -1,0 +1,157 @@
+@import "./item-sheet.less";
+@import "./char-sheet.less";
+@import "./char-stat-block.less";
+@import "./vehicle-sheet.less";
+@import "./spaceship-sheet.less";
+@import "./age-roll-sheet.less";
+@import "./colorsets.less";
+@import "./age-roller.less";
+@import "./age-tracker.less";
+
+// Adding Fonts
+@font-face {
+    font-family: "Ethernal Knight";
+    src: url("../resources/fonts/eternalknight/eternalknight.otf");
+}
+@font-face {
+    font-family: "Exo2";
+    src: url("../resources/fonts/exo2/Exo2-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: "Electrolize";
+    src: url("../resources/fonts/electrolize/Electrolize-Regular.ttf");
+}
+
+// Roboto fonts declaration
+@font-face {
+    font-family: "Roboto";
+    src: url("../resources/fonts/roboto/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../resources/fonts/roboto/Roboto-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../resources/fonts/roboto/Roboto-Italic.ttf");
+    font-style: italic;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../resources/fonts/roboto/Roboto-BoldItalic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+// Avoid text on context-menu from wrapping
+#context-menu {
+    width: fit-content;
+    li {
+        white-space: nowrap;
+        text-align: left;
+    };
+}
+
+/*---- Font Override----*/
+body *:not(i) {
+    font-family: 'Roboto' !important;
+}
+
+/*---------Background---------------------*/
+// .window-app.journal-sheet .window-content,
+.window-app.sheet.char .window-content,
+.window-app.sheet.vehicle .window-content,
+.window-app.sheet.spaceship .window-content {
+    background-image: none;
+    background: none;
+    background-color: rgba(207, 194, 188, 0.4);
+}
+.window-app.sheet.item .window-content {
+    background-image: none;
+    background: none;
+}
+
+// Buttons Styling for the-expanse-dialog Dialog boxes
+.the-expanse-dialog.bonus-select {
+    button.dialog-button {
+        flex: 0 0 45%
+    }
+}
+
+.the-expanse {
+    // Removing some FoundryVTT core styling
+    input,
+    select {
+        border: none;
+        // font-variant: small-caps;
+    }
+    textarea {
+        white-space: normal;
+        color: inherit;
+    }
+    textarea:focus {box-shadow: none;}
+
+    button {box-shadow: none;}
+    button:hover {box-shadow: none;}
+    button:active {box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);}
+    button.age-button {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    a:hover {text-shadow: none;}
+    .tabs .active {text-shadow: none;}
+    
+    .flexcol {
+        display: flex;
+        flex-direction: column;
+    };
+
+    .flexrow {
+        display: flex;
+        flex-direction: row;
+    };
+
+    .no-flexwrap {
+        flex-wrap: nowrap;
+    };
+
+    .flexwrap {
+        flex-wrap: wrap;
+    }
+
+    .flex-align-center {
+        align-items: center;
+    };
+
+    .flex-align-end {
+        align-items: flex-end;
+    };
+
+    .flex-align-start {
+        align-items: flex-start;
+    };
+
+    .flex-justify-center {
+        justify-content: center;
+    };
+
+    .flex-justify-start {
+        justify-content: flex-start;
+    };
+
+    .flex-justify-between {
+        justify-content: space-between;
+    };
+
+    .flex-justify-around {
+        justify-content: space-around;
+    };
+
+    .flex-justify-evenly {
+        justify-content: space-evenly;
+    };
+};
+/*---------------------------------*/
