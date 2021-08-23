@@ -37,5 +37,8 @@
     "gridDistance": 2,
     "gridUnits": "m",
     "minimumCoreVersion": "0.8.5",
-    "compatibleCoreVersion": "0.8.8"
+    "compatibleCoreVersion": "0.8.8",
+    "url": "https://github.com/Dellatosa/the-expanse",
+    "manifest": "https://raw.githubusercontent.com/Dellatosa/the-expanse/main/system.json",
+    "download": "https://github.com/Dellatosa/the-expanse/archive/refs/tags/v0.0.1.zip"
 }
