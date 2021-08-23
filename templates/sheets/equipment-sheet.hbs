@@ -1,0 +1,52 @@
+<form class="{{cssClass}} the-expanse item equipment colorset-selection colorset-{{colorScheme}}" autocomplete="off">
+
+    <div class="sheet-content item-stats equipment">
+        <div class="flexcol">
+            {{#if inChat}}
+            <div class="item-card-title colorset-first-tier" type="text">{{name}}</div>
+            {{else}}
+            <input name="name" class="item-card-title colorset-first-tier" type="text" value="{{item.name}}" placeholder="{{localize "the-expanse.item.name"}}"/>
+            {{/if}}
+            <div class="flexrow item-card-stats">
+                
+                {{!-- Item Image --}}
+                {{> "systems/the-expanse/templates/partials/item-image-sheet-card.hbs"}} 
+                
+                {{!-- Purchase Test / Cost --}}
+                <div class="flexcol">
+                    {{> "systems/the-expanse/templates/partials/cost-resource-block.hbs"}}
+                </div>
+                {{!-- Quantity --}}
+                <div class="flexcol">
+                    <label>{{localize "the-expanse.item.quantity"}}</label>
+                    <input type="number" {{#if inChat}}disabled{{/if}} name="data.quantity" value="{{data.data.quantity}}" data-dtype="Number" />
+                </div>                
+                {{!-- Weight --}}
+                <div class="flexcol">
+                    <label>{{localize "the-expanse.item.weight"}}</label>
+                    <input type="text" {{#if inChat}}disabled{{/if}} name="data.weight" value="{{data.data.weight}}" data-dtype="Number" />
+                </div>
+            </div>
+
+            {{!-- Active Bonuses --}}
+            {{> "systems/the-expanse/templates/partials/active-bonuses.hbs"}}
+            
+
+            {{#if inChat}}
+            {{!-- Description --}}
+            <div class="item-card-desc">
+                <label>{{localize "the-expanse.item.desc"}}</label>
+                {{editor content=data.data.longDesc target="data.longDesc" button=true owner=owner editable=editable}}
+            </div>
+            {{/if}}
+
+        </div>
+
+        {{#if inChat}}
+        {{else}}
+        {{!-- Tab Control --}}
+        {{> "systems/the-expanse/templates/partials/bonus-desc-sheet.hbs"}}
+        {{/if}}
+    </div>
+    
+</form>

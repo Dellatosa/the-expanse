@@ -1,0 +1,40 @@
+<form class="{{cssClass}} the-expanse item relationship colorset-{{colorScheme}} colorset-selection" autocomplete="off">
+
+    <div class="sheet-content item-stats relationship">
+        <div class="flexcol">
+            {{#if inChat}}
+            <div class="item-card-title colorset-first-tier" type="text">{{name}}</div>
+            {{else}}
+            <input name="name" class="item-card-title colorset-first-tier" type="text" value="{{item.name}}" placeholder="{{localize "the-expanse.item.name"}}"/>
+            {{/if}}
+            <div class="item-card-stats flexrow">
+                {{!-- Item Image --}}
+                {{> "systems/the-expanse/templates/partials/item-image-sheet-card.hbs"}} 
+                
+                <div class="flexrow" style="flex-wrap: wrap;">
+                    {{!-- Bond --}}
+                    <div class="flexrow long-text flex-align-start" style="min-width: 100%;">
+                        <label>{{localize "the-expanse.relationshipBond"}}</label>
+                        {{#if inChat}}
+                        <p>{{data.data.shortDesc}}</p>
+                        {{else}}
+                        <input name="data.shortDesc" class="long-text" type="text" text-type="long" value="{{data.data.shortDesc}}" placeholder="{{localize "the-expanse.relationshipBond"}}"/>
+                        {{/if}}
+                    </div>
+
+                    {{!-- Intensity --}}
+                    <div class="flexrow flex-align-start">
+                        <label>{{localize "the-expanse.relationshipIntensity"}}</label>
+                        <input type="number" {{#if inChat}}disabled{{/if}} name="data.intensity" value="{{data.data.intensity}}"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="item-card-desc">
+            <label>{{localize "the-expanse.item.desc"}}</label>
+            {{editor content=data.data.longDesc target="data.longDesc" button=true owner=owner editable=true}}
+        </div>
+    </div>
+    
+</form>

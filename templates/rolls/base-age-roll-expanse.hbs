@@ -1,0 +1,118 @@
+<form class="the-expanse base-age-roll colorset-selection {{colorScheme}}">
+    <div class="feature-controls"
+        data-stunt-die="{{ageRollSummary.dice.d3}}"
+        data-actor-id="{{actorId}}"
+        data-actor-token="{{isToken}}"
+        data-atkdmg-trade="{{atkDmgTradeOff}}"
+        {{#if focusId}} data-focus-id="{{focusId}}" {{/if}}
+        {{#if itemId}} data-item-id="{{itemId}}" {{/if}}>
+
+        <div class="flexcol roll-card regular-roll-card">
+
+            <div>
+                <h3 class="action-details colorset-first-tier">{{flavor}}</h3>
+                <div class="dice-show trait-test flexrow">
+                    {{#each ageRollSummary.dice as |diceFace|}}
+                        <img src="{{diceFace.img}}" width="50" height="50">
+                    {{/each}}
+                </div>
+                <div class="flexrow roll-mod total-roll">
+                    <h3 class="line-header">{{localize "the-expanse.settings.totalRolled"}} {{#if rollTN}} {{#if isSuccess}} ({{localize "the-expanse.success"}}) {{else}} ({{localize "the-expanse.miss"}}) {{/if}} {{/if}}</h3>
+                    <h3 class="line-value">{{roll.total}}</h3>
+                </div>
+                <div class="flexrow roll-mod{{#if ageRollSummary.stunt}} stunted{{/if}}">
+                    <div class="line-header">{{localize "the-expanse.settings.stuntPoints"}}</div>
+                    <div class="line-value">{{#if ageRollSummary.stunt}}{{ageRollSummary.dice.d3.val}}{{else}}-{{/if}}</div>
+                </div>
+
+                {{#each partials as |part key|}}
+                <div class="flexrow roll-mod">
+                    <div class="line-header">{{part.label}}</div>
+                    <div class="line-value">{{part.value}}</div>
+                </div>
+                {{/each}}
+                
+            </div>
+
+            {{#if (ne rollType 'fatigue')}}
+            <div class="age-chat-buttons flexcol">
+                {{#if (or hasDamage hasHealing)}}
+                <div class="age-chat-buttons-grid">
+
+                    <button class="age-button roll-damage main-dmg">
+                        {{#if hasTest}}
+                            {{#if hasDamage}} {{localize "the-expanse.chatCard.rollFullDamage"}}
+                            {{else}} {{localize "the-expanse.chatCard.rollFullHealing"}} {{/if}}
+                        {{else}}
+                            {{#if hasDamage}} {{localize "the-expanse.chatCard.rollDamage"}}
+                            {{else}} {{localize "the-expanse.chatCard.rollHealing"}} {{/if}}
+                        {{/if}}
+                    </button>
+
+                    <button class="age-button roll-damage add-stunt-damage sd-dmg">
+                        {{localize "the-expanse.chatCard.addStuntDie"}}
+                    </button>
+
+                    <button class="age-button roll-damage add-focus-damage focus-dmg">
+                        {{localize "the-expanse.chatCard.addFocus"}}
+                    </button>
+
+                    <button class="age-button roll-damage add-focus-damage add-stunt-damage both-dmg">
+                        {{localize "the-expanse.chatCard.addFocusSD"}}
+                    </button>
+
+                </div>
+                {{/if}}
+
+                {{#if (and (or hasDamage hasHealing) hasTest)}}
+                <div class="age-chat-buttons-grid">
+            
+                    <button class="age-button roll-damage resisted main-dmg">
+                        {{#if hasDamage}} {{localize "the-expanse.chatCard.rollResistedDamage"}}
+                        {{else}} {{localize "the-expanse.chatCard.rollResistedHealing"}} {{/if}}
+                    </button>
+
+                    <button class="age-button roll-damage resisted add-stunt-damage sd-dmg">
+                        {{localize "the-expanse.chatCard.addStuntDie"}}
+                    </button>
+
+                    <button class="age-button roll-damage resisted add-focus-damage focus-dmg">
+                        {{localize "the-expanse.chatCard.addFocus"}}
+                    </button>
+
+                    <button class="age-button roll-damage resisted add-focus-damage add-stunt-damage both-dmg">
+                        {{localize "the-expanse.chatCard.addFocusSD"}}
+                    </button>
+              
+                </div>
+                {{/if}}
+
+                {{#if usingFatigue}}
+                {{#if hasFatigue}}
+                <button class="roll-fatigue age-button">
+                    {{localize "the-expanse.rollFatigue"}} <i class="fas fa-head-side-cough"></i>
+                </button>
+                {{/if}}
+                {{/if}}
+            </div>
+            {{/if}}
+            
+        </div>
+        <div class="blind-roll-card flexcol roll-card">
+            <div>
+                <h3 class="action-details colorset-first-tier other-user-roll">
+                    {{localize "the-expanse.chatCard.looseRoll" user=user.name }}
+                </h3>
+                <h3 class="action-details colorset-first-tier user-roll">
+                    {{localize "the-expanse.blindRollSomeone"}}
+                </h3>
+                <div class="dice-show trait-test flexrow">
+                    <i class="fas fa-question-circle fa-4x"></i>
+                    <i class="fas fa-question-circle fa-4x"></i>
+                    <i class="fas fa-question-circle fa-4x"></i>
+                </div>
+                <div class="roll-mod stunted blind-value">???</div>
+            </div>
+        </div>
+    </div>
+</form>

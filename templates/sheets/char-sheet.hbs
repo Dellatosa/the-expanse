@@ -1,0 +1,62 @@
+{{!-- Colorset defined in the Actor Sheet Class --}}
+<form class="actor-sheet {{cssClass}} colorset-{{data.colorScheme}} colorset-selection" autocomplete="off">
+    <div class="char-sheet">
+        <header class="sheet-header flexcol">
+            
+            <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+            <div>
+                <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder={{localize "the-expanse.name"}}/></h1>        
+
+                {{!-- General Character Information --}}
+                <div class="age-header">  
+                    <div class="flexrow">
+                        <label for="">{{localize "the-expanse.age"}}</label>
+                        <input type="text" name="data.age" value="{{data.data.age}}">
+
+                        <label for="">{{localize "the-expanse.height"}}</label>
+                        <input type="text" name="data.height" value="{{data.data.height}}">
+                        
+                        <label for="">{{localize "the-expanse.weight"}}</label>
+                        <input type="text" name="data.weight" value="{{data.data.weight}}">  
+
+                    </div>
+
+                    <div class="flexrow">
+                        <label for="">{{localize "the-expanse.background"}}</label>
+                        <input type="text" name="data.background" value="{{data.data.background}}">
+                        
+                        <label for="">{{localize (concat "SETTINGS.ancestryOpt" data.ancestry)}}</label>
+                        <input type="text" name="data.ancestry" value="{{data.data.ancestry}}"> 
+                    </div>
+                    
+                    <div class="flexrow">
+                        <label for="">{{localize "the-expanse.socialClass"}}</label>
+                        <input type="text" name="data.socialClass" value="{{data.data.socialClass}}">
+                    </div>
+                    
+                    <div class="flexrow">
+                        <label for="">{{localize (concat "SETTINGS.occ" data.occupation)}}</label>
+                        <input type="text" name="data.profession" value="{{data.data.profession}}">          
+                    </div>
+
+                    {{!-- Level / XP block --}}
+                    <div class="flexrow level-xp">
+                        <label for="">{{localize "the-expanse.level"}}</label>
+                        <input type="number" name="data.level" value="{{data.data.level}}" data-dtype="Number" />
+
+                        <label>{{localize "the-expanse.currentLevel"}}</label>
+                        <input type="number" number-type="five-digits" name="data.xp.value" value="{{data.data.xp.value}}" data-dtype="Number" />
+                            
+                        <label>{{localize "the-expanse.nextLevel"}}</label>
+                        <input type="number" number-type="five-digits" name="data.xp.next" value="{{data.data.xp.next}}" data-dtype="Number" />
+
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        
+        {{!-- Navigaton Bar and Tabs --}}
+        {{> "systems/the-expanse/templates/partials/char-sheet-nav-bar.hbs"}}
+    </div>
+</form>

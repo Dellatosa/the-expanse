@@ -1,0 +1,34 @@
+<form class="{{cssClass}} the-expanse item stunts colorset-{{colorScheme}} colorset-selection" autocomplete="off">
+
+    <div class="sheet-content item-stats stunts">
+        <div class="flexcol">
+            {{#if inChat}}
+            <div class="item-card-title colorset-first-tier" type="text">{{name}}</div>
+            {{else}}
+            <input name="name" class="item-card-title colorset-first-tier" type="text" value="{{item.name}}" placeholder="{{localize "the-expanse.item.name"}}"/>
+            {{/if}}
+            
+            <div class="item-card-stats flexrow flex-justify-start flex-align-center">
+                {{!-- Item Image --}}
+                {{> "systems/the-expanse/templates/partials/item-image-sheet-card.hbs"}} 
+
+                {{!-- Cost --}}
+                <div class="flexcol">
+                    <label>{{localize "the-expanse.settings.stuntPoints"}}</label>
+                    {{#if inChat}}
+                    <input name="data.stuntPoints" disabled type="number" value="{{data.data.stuntPoints}}" placeholder="{{localize "the-expanse.settings.stuntPointsIndex"}}"/>
+                    {{else}}
+                    <input name="data.stuntPoints" type="number" value="{{data.data.stuntPoints}}" placeholder="{{localize "the-expanse.settings.stuntPointsIndex"}}"/>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="item-card-desc">
+            
+            {{!-- Description --}}
+            <label>{{localize "the-expanse.item.desc"}}</label>
+            {{editor content=data.data.longDesc target="data.longDesc" button=true owner=owner editable=true}}
+        </div>
+    </div>
+    
+</form>

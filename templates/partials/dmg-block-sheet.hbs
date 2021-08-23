@@ -1,0 +1,94 @@
+{{#if inChat}}
+<div class="flexcol flex-justify-center damage-formula">
+    <label>
+        {{#if data.data.hasDamage}} {{localize "the-expanse.item.damage"}} {{/if}}
+        {{#if data.data.hasHealing}} {{localize "the-expanse.item.healing"}} {{/if}}
+    </label>
+    <p class="in-chat-text">{{concat data.data.nrDice "d" data.data.diceType "+" data.data.extraValue}}{{#when data.data.dmgAbl 'noteq' 'no-abl'}}{{concat "+" data.data.ablDamageValue}}{{/when}}</p>
+    {{#if data.hasDamage}}
+    <p class="in-chat-text">{{localize (concat "the-expanse." data.data.dmgType)}} | {{localize (concat "the-expanse." data.data.dmgSource)}}</p>
+    {{/if}}
+    {{#if data.data.hasTest}}
+    <label>{{localize "the-expanse.item.resistedEffect"}}</label>
+    <p class="in-chat-text">{{concat data.data.damageResisted.nrDice "d" data.data.damageResisted.diceType "+" data.data.damageResisted.extraValue}}{{#when data.data.damageResisted.dmgAbl 'noteq' 'no-abl'}}{{concat "+" data.data.damageResisted.ablDamageValue}}{{/when}}</p>
+    {{/if}}
+</div>
+{{else}}
+<div class="flexcol">
+    <div class="flexcol cause-damage">
+        {{#if data.data.hasDamage}}
+        <label>{{localize "the-expanse.item.damage"}}</label>
+        {{/if}}
+        {{#if data.data.hasHealing}}
+        <label>{{localize "the-expanse.item.healing"}}</label>
+        {{/if}}
+        <div class="flexrow">
+            <div class="flexrow damage-dice-field">
+                <input type="number" name="data.nrDice" value="{{data.data.nrDice}}" data-dtype="Number" />
+                <select name="data.diceType" class="dice-size">
+                    {{#select data.data.diceType}}
+                    <option value="6">{{localize "the-expanse.settings.d6"}}</option>
+                    <option value="3">{{localize "the-expanse.settings.d3"}}</option>
+                    {{/select}}
+                </select>
+                <span>{{localize "the-expanse.settings.plusSign"}}</span>
+                <input type="number" name="data.extraValue" value="{{data.data.extraValue}}" data-dtype="Number" />
+                <span>{{localize "the-expanse.settings.plusSign"}}</span>
+                <select name="data.dmgAbl">
+                    {{#select data.data.dmgAbl}}
+                    <option value="no-abl">—</option>
+                    {{#each config.abilities as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+        </div>
+        {{#if data.data.hasDamage}}
+        <div class="flexrow">
+            <select name="data.dmgType">
+                {{#select data.data.dmgType}}
+                {{#each config.damageType as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+            <select name="data.dmgSource">
+                {{#select data.data.dmgSource}}
+                {{#each config.damageSource as |name source|}}
+                <option value="{{source}}">{{localize name}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        {{/if}}
+    </div>
+    {{#if data.data.hasTest}}
+    <div class="flexcol cause-damage">
+        <label>{{localize "the-expanse.item.resistedEffect"}}</label>
+        <div class="flexrow">
+            <div class="flexrow damage-dice-field">
+                <input type="number" name="data.damageResisted.nrDice" value="{{data.data.damageResisted.nrDice}}" data-dtype="Number" />
+                <select name="data.damageResisted.diceType" class="dice-size">
+                    {{#select data.data.damageResisted.diceType}}
+                    <option value="6">{{localize "the-expanse.settings.d6"}}</option>
+                    <option value="3">{{localize "the-expanse.settings.d3"}}</option>
+                    {{/select}}
+                </select>
+                <span>{{localize "the-expanse.settings.plusSign"}}</span>
+                <input type="number" name="data.damageResisted.extraValue" value="{{data.data.damageResisted.extraValue}}" data-dtype="Number" />
+                <span>{{localize "the-expanse.settings.plusSign"}}</span>
+                <select name="data.damageResisted.dmgAbl">
+                    {{#select data.data.damageResisted.dmgAbl}}
+                    <option value="no-abl">—</option>
+                    {{#each config.abilities as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+        </div>
+    </div>
+    {{/if}}      
+</div>
+{{/if}}

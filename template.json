@@ -1,0 +1,588 @@
+{
+    "Actor": {
+        "types": [
+            "char",
+            "vehicle",
+            "spaceship"
+        ],
+        "templates": {},
+        "spaceship": {
+            "size": 1,
+            "hull": {
+                "nrDice": 1,
+                "diceType": 6,
+                "extraValue": 0
+            },
+            "drive": "",
+            "description": "",
+            "gmNotes": "",
+            "passengers": [],
+            "crew": {
+                "min": 1,
+                "current": 1,
+                "typical": 1,
+                "competence": 1
+            },
+            "weapons": {},
+            "systems": {
+                "maneuver": {
+                    "mod": 0,
+                    "base": 0,
+                    "operator": "crew",
+                    "useAbl": "dex",
+                    "useFocus": ""
+                },
+                "command": {
+                    "mod": 0,
+                    "base": 0,
+                    "operator": "crew",
+                    "useAbl": "comm",
+                    "useFocus": ""
+                },
+                "sensors": {
+                    "mod": 0,
+                    "base": 0,
+                    "operator": "crew",
+                    "useAbl": "int",
+                    "useFocus": ""
+                },
+                "damageControl": {
+                    "mod": 0,
+                    "base": 0,
+                    "operator": "crew",
+                    "TN": 11,
+                    "useAbl": "int",
+                    "useFocus": "",
+                    "threshold": {
+                        "current": 0,
+                        "target": 5
+                    }
+                }
+            },
+            "losses": {
+                "normal": {
+                    "collateral": {
+                        "actual": 0,
+                        "max": 6
+                    },
+                    "hull": {
+                        "actual": 0,
+                        "max": 6
+                    },
+                    "maneuverability": {
+                        "actual": 0,
+                        "max": 6
+                    },
+                    "sensors": {
+                        "actual": 0,
+                        "max": 6
+                    },
+                    "weapons": {
+                        "actual": 0,
+                        "max": 6
+                    }
+                },
+                "serious": {
+                    "reactorOffline": {
+                        "actual": 0,
+                        "max": 6
+                    },
+                    "weaponOffline": {
+                        "actual": 0,
+                        "max": 6
+                    }
+                }
+            },
+            "takenOut": false
+
+        },
+        "vehicle": {
+            "handling": {
+                "mod": 0,
+                "useFocus": "",
+                "useAbl":"acc"
+            },
+            "capacity": 0,
+            "velocity": {
+                "category": "standard",
+                "catMod": 0
+            },
+            "ramDmg": 1,
+            "hull": 0,
+            "cost": 0,
+            "description": "",
+            "gmNotes": "",
+            "coverRating": 0,
+            "armorRating": 0,
+            "partHealth": {
+                "max": 20,
+                "value": 20
+            },
+            "conductor": "",
+            "passengers": [],
+            "customSideswipeDmg": 1,
+            "customCollisionDmg": 1
+        },
+        "char": {
+            "dmgMod": 0,
+            "testMod": 0,
+            "attackMod": 0,
+            "statBlockView": false,
+            "level": 1,
+            "xp": {
+                "value": 0,
+                "next": 0,
+                "advPoints": 0
+            },
+            "features": "",
+            "traits": "",
+            "goals": "",
+            "age": "",
+            "language": "",
+            "background": "",
+            "secretNote": "",
+            "gmNotes": "",
+            "socialClass": "",
+            "ancestry": "",
+            "profession": "",
+            "drive": {
+                "name": "",
+                "quality": "",
+                "downfall": ""
+            },
+            "speed": {
+                "base": 10,
+                "mod": 0,
+                "total": 10
+            },
+            "defense": {
+                "base": 10,
+                "mod": 0,
+                "gameModeBonus": 0,
+                "total": 10
+            },
+            "armor": {
+                "toughness": {
+                    "mod": 0,
+                    "gameModeBonus": 0
+                },
+                "impact": 0,
+                "ballistic": 0,
+                "penalty": 0
+            },
+            "resources": {
+                "base": 4,
+                "mod": 0
+            },
+            "gp": 0,
+            "sp": 0,
+            "cp": 0,
+            "currency": 0,
+            "fear": 0,
+            "horror": {
+                "level": 0,
+                "effect": ""
+            },
+            "aim": {
+                "value": 1,
+                "active": false,
+                "mod": 0
+            },
+            "defend": {
+                "defenseBonus": 2,
+                "active": false,
+                "mod": 0
+            },
+            "guardUp": {
+                "defenseBonus": 1,
+                "testPenalty": 1,
+                "active": false,
+                "mod": 0
+            },
+            "allOutAttack": {
+                "dmgBonus": 1,
+                "defensePenalty": 1,
+                "active": false,
+                "mod": 0
+            },
+            "initiativeMod": 0,
+            "abilities": {
+                "acc": {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "comm": {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "cons":  {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "dex":  {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "fight":  {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "int":  {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "per":  {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "str":  {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "will":  {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "magic":  {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                },
+                "cunn":  {
+                    "value": 0,
+                    "primary": false,
+                    "lastUp": false
+                }
+            },
+            "health": {
+                "min": 0,
+                "value": 35,
+                "set": 35
+            },
+            "powerPoints": {
+                "min": 0,
+                "value": 10,
+                "set": 10
+            },
+            "fatigue": {
+                "min": 0,
+                "entered": 0,
+                "max": 4
+            },
+            "conviction": {
+                "min": 0,
+                "value": 3,
+                "set": 3
+            },
+            "advTestThreshold": 0,
+            "conditions": {
+                "blinded": false,
+                "deafened": false,
+                "exhausted": false,
+                "fatigued": false,
+                "freefalling": false,
+                "helpless": false,
+                "hindred": false,
+                "hindered": false,
+                "prone": false,
+                "restrained": false,
+                "injured": false,
+                "wounded": false,
+                "unconscious": false,
+                "dying": false
+            }
+        }
+    },
+    "Item": {
+        "types": [
+            "equipment",
+            "focus",
+            "weapon",
+            "power",
+            "talent",
+            "stunts",
+            "relationship",
+            "honorifics",
+            "membership",
+            "shipfeatures"
+        ],
+        "templates": {
+            "itemReq": {
+                "minStr": 0,
+                "useFocus": ""
+            },
+            "damage": {
+                "dmgType": "stun",
+                "dmgSource": "impact",
+                "nrDice": "1",
+                "diceType": "6",
+                "extraValue": 0,
+                "dmgAbl": "str"
+            },
+            "hardItem": {
+                "weight": 0,
+                "cost": 0,
+                "quantity": 1,
+                "equiped": false
+            },
+            "penalty": {
+                "armor": 0,
+                "speed": 0
+            },
+            "activation": {
+                "useAbl": "acc",
+                "targetNumber": 10,
+                "powerPointCost": 1,
+                "fatigueTN": 10
+            },
+            "description": {
+                "shortDesc": "",
+                "longDesc": ""
+            },
+            "bonuses": {
+                "itemMods": {
+                    "itemDamage": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "testMod": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "attackMod": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "actorDamage": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "itemActivation": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "focus": {
+                        "name": "",
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "defense":  {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "impactArmor":  {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "ballisticArmor":  {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "toughness":  {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "speed": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "armorStrain": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "defendMnv":  {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "guardupMnv":  {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "allOutAtkMnv":  {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "maxHealth":  {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "maxConviction": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "maxPowerPoints": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "powerForce": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "aimMnv": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "armorPenalty": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "acc": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "comm": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "cons": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "cunn": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "dex": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "fight": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "int": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "magic": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "per": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "str": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    },
+                    "will": {
+                        "value": 0,
+                        "isActive": false,
+                        "selected": false
+                    }
+                }
+            }
+        },
+        "shipfeatures": {
+            "templates": ["description", "hardItem", "damage"],
+            "type": "weapon",
+            "damage": "",
+            "sensorMod": 0,
+            "maneuverSizeStep": 0,
+            "juiceMod": 0,
+            "hullPlating": 0,
+            "hullMod": 0,
+            "useFocus": "",
+            "useAbl": "",
+            "quality": "quality",
+            "isActive": true
+        },
+        "equipment": {
+            "templates": ["description", "hardItem", "bonuses"]
+        },
+        "focus": {
+            "templates": ["description", "activation"],
+            "improved": false,
+            "initialValue": 2
+        },
+        "weapon": {
+            "templates": ["activation", "damage", "itemReq", "hardItem", "description", "bonuses"],
+            "reload": "minor",
+            "capacity": 5,
+            "range": 2,
+            "rangeMax": "-",
+            "rof": "none"
+        },
+        "power": {
+            "templates": ["damage", "itemReq", "description", "activation", "bonuses"],
+            "powerLevel": 0,
+            "castTime": "minor",
+            "activate": false,
+            "useFatigue": false,
+            "inputFatigueTN": false,
+            "ablFatigue": "will",
+            "causeDamage": false,
+            "causeHealing": false,
+            "itemForceAbl": "will",
+            "hasTest": false,
+            "testAbl": "will",
+            "testFocus": "",
+            "damageResisted": {
+                "nrDice": "1",
+                "diceType": "6",
+                "extraValue": 0,
+                "dmgAbl": "int"
+            }
+        },
+        "talent": {
+            "templates": ["description", "bonuses"],
+            "activate": false
+        },
+        "stunts": {
+            "templates": ["description"],
+            "stuntPoints": 1
+        },
+        "relationship": {
+            "templates": ["description"],
+            "intensity": 1
+        },
+        "honorifics": {
+            "templates": ["description"]
+        },
+        "membership": {
+            "templates": ["description"],
+            "rank": 1
+        }
+    }
+}

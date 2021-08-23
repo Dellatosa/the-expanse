@@ -1,0 +1,48 @@
+{{!-- Persona Tab --}}
+
+<div class="flexrow container">
+    <label for="">{{localize "the-expanse.drive.drive"}}</label>
+    <input type="text" name="data.drive.name" value="{{data.data.drive.name}}">          
+
+    <label for="">{{localize "the-expanse.drive.quality"}}</label>
+    <input type="text" name="data.drive.quality" value="{{data.data.drive.quality}}">          
+
+    <label for="">{{localize "the-expanse.drive.downfall"}}</label>
+    <input type="text" name="data.drive.downfall" value="{{data.data.drive.downfall}}">          
+</div>
+
+<div class="flexrow goals-language">
+    <div class="flexcol goals container">
+        <label>{{localize "the-expanse.goals"}}</label>
+        <textarea class="free-text" name="data.goals">{{data.data.goals}}</textarea>
+    </div>
+    <div class="spacer"></div>
+    <div class="flexcol language container">
+        <label>{{localize "the-expanse.language"}}</label>
+        <textarea class="free-text" name="data.language">{{data.data.language}}</textarea>
+    </div>
+</div>
+
+<div class="flexcol features container">
+    <label for="">{{localize "the-expanse.features"}}</label>
+    <textarea class="free-text" name="data.traits">{{data.data.traits}}</textarea>
+</div>
+
+{{#if isGM}}
+<div class="flexcol secret-note container">
+    <label for="">{{localize "the-expanse.gmNotes"}}</label>
+    <textarea class="free-text" name="data.gmNotes">{{data.data.gmNotes}}</textarea>
+</div>
+{{/if}}
+
+{{#if owner}}
+<div class="flexcol secret-note container">
+    <label for="">{{localize "the-expanse.secretNote"}}</label>
+    <textarea class="free-text" name="data.secretNote">{{data.data.secretNote}}</textarea>
+</div>
+{{/if}}
+
+<div class="flexcol bio container">
+    <label for="">{{localize "the-expanse.bio"}}</label>
+    {{editor content=data.data.features target="data.features" button=true owner=owner editable=editable}}
+</div>

@@ -1,0 +1,29 @@
+<form class="{{cssClass}} the-expanse item honorifics colorset-{{colorScheme}} colorset-selection" autocomplete="off">
+
+    <div class="sheet-content item-stats honorifics">
+        <div class="flexcol">
+            {{#if inChat}}
+            <div class="item-card-title colorset-first-tier" type="text">{{name}}</div>
+            {{else}}
+            <input name="name" class="item-card-title colorset-first-tier" type="text" value="{{item.name}}" placeholder="{{localize "the-expanse.item.name"}}"/>
+            {{/if}}
+        </div>
+        <div class="item-card-stats flexrow">
+            {{> "systems/the-expanse/templates/partials/item-image-sheet-card.hbs"}}
+                <div class="flexcol" style="flex-wrap: wrap;">
+                    <label>{{localize "the-expanse.type"}}</label>
+                    {{#if inChat}}
+                    <p>{{data.data.shortDesc}}</p>
+                    {{else}}
+                    <input name="data.shortDesc" class="long-text" type="text" text-type="long" value="{{data.data.shortDesc}}" placeholder="{{localize "the-expanse.type"}}"/>
+                    {{/if}}
+                </div>
+        </div>
+        <div class="item-card-desc">
+            <label>{{localize "the-expanse.item.desc"}}</label>
+            {{editor content=data.data.longDesc target="data.longDesc" button=true owner=owner editable=true}}
+        
+        </div>
+    </div>
+    
+</form>

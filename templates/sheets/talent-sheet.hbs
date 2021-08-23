@@ -1,0 +1,47 @@
+<form class="{{cssClass}} the-expanse item colorset-{{colorScheme}} colorset-selection" autocomplete="off">
+
+    <div class="sheet-content item-stats talent">
+        <div class="flexcol">
+            {{#if inChat}}
+            <div class="item-card-title colorset-first-tier" type="text">{{name}}</div>
+            {{else}}
+            <input name="name" class="item-card-title colorset-first-tier" type="text" value="{{item.name}}" placeholder="{{localize "the-expanse.item.name"}}"/>
+            {{/if}}
+            <div class="item-card-stats flexrow">
+                
+                {{!-- Item Image --}}
+                {{> "systems/the-expanse/templates/partials/item-image-sheet-card.hbs"}} 
+                
+                {{!-- Degree Level --}}
+                <div class="flexcol">
+                    <label>{{localize "the-expanse.talentDegree"}}</label>
+                    {{#if inChat}}
+                    <div class="data-input">{{data.data.shortDesc}}</div>
+                    {{else}}
+                    <input type="text" name="data.shortDesc" value="{{data.data.shortDesc}}" placeholder="{{localize "the-expanse.talentDegree"}}" />
+                    {{/if}}
+                </div>
+            </div>
+            
+            {{!-- Active Bonuses --}}
+            {{> "systems/the-expanse/templates/partials/active-bonuses.hbs"}}
+            
+
+            {{#if inChat}}
+            {{!-- Description --}}
+            <div class="item-card-desc">
+                <label>{{localize "the-expanse.item.desc"}}</label>
+                {{editor content=data.data.longDesc target="data.longDesc" button=true owner=owner editable=true}}
+            </div>
+            {{/if}}
+
+        </div>
+
+        {{#if inChat}}
+        {{else}}
+        {{!-- Tab Control --}}
+        {{> "systems/the-expanse/templates/partials/bonus-desc-sheet.hbs"}}
+        {{/if}}
+
+    </div>
+</form>

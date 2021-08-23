@@ -1,0 +1,197 @@
+<form class="{{cssClass}} the-expanse sheet vehicle colorset-{{data.colorScheme}}" autocomplete="off">
+
+    {{!-- Vehicle Header --}}
+    <input name="name" class="vehicle-name colorset-first-tier" type="text" value="{{actor.name}}" placeholder="{{localize "the-expanse.item.name"}}"/>
+    <div class="flexrow image-description">
+        <img class="vehicle-image" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+        <div class="vehicle-desc">
+            <label class="colorset-second-tier desc">{{localize "the-expanse.item.desc"}}</label>
+            {{editor content=data.data.description target="data.description" button=true owner=owner editable=true}}
+        </div>
+    </div>
+
+    {{!-- First Stats Row --}}
+    <div class="flexrow">
+
+        {{!-- Vehicle Parameters --}}
+        <div class="stats-block parameters flexwrap colorset-second-tier">
+            <h2>{{localize "the-expanse.parameters"}}</h2>
+            <div class="flexrow conductor-selection">
+                <label class="conductor">{{localize "the-expanse.conductor"}}</label>
+                <select class="conductor" name="data.conductor">
+                    {{#select data.data.conductor}}
+                    <option value="">{{localize "the-expanse.noAction"}}</option>
+                    <option value="synth-vehicle">Token</option>
+                    {{#each data.passengers as |passenger|}}
+                    <option value="{{passenger.id}}">{{passenger.name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{!-- Synths seems to work now
+                <select class="conductor" name="data.conductor" {{#if data.isSynth}}disabled{{/if}}>
+                    {{#select data.data.conductor}}
+                    {{#if data.isSynth}}
+                    <option value="synth-vehicle">Token</option>
+                    {{else}}
+                    <option value="">{{localize "the-expanse.noAction"}}</option>
+                    {{#each data.passengers as |passenger|}}
+                    <option value="{{passenger.id}}">{{passenger.name}}</option>
+                    {{/each}}
+                    {{/if}}
+                    {{/select}}
+                </select>   --}}
+            </div>
+
+            <div class="flexcol focus-ability">
+                <div class="flexrow flex-justify-center label-with-icon">
+                    <label class="handling-focus">{{localize "the-expanse.abl"}} / {{localize "the-expanse.focus"}}</label>
+                    {{!-- <a class="roll-maneuver {{#if data.isSynth}}is-synth{{/if}}"><i class="fas fa-dice"></i></a>--}}
+                    <a class="roll-maneuver"><i class="fas fa-dice"></i></a>
+                </div>
+                <select name="data.handling.useAbl" class="data-input">
+                    {{#select data.data.handling.useAbl}}
+                    {{#each data.config.abilities as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                <input type="text" name="data.handling.useFocus" value="{{data.data.handling.useFocus}}" list="{{name}}-{{actor.id}}-list" placeholder="{{localize "the-expanse.focus"}}">
+                <datalist id="{{name}}-{{actor.id}}-list">
+                    <option value=""></option>
+                    {{#each data.config.focus as |focus|}}
+                    <option value="{{focus.name}}"></option>
+                    {{/each}}
+                </datalist>
+            </div>
+
+            <div class="flexrow flexwrap">
+                <div class="flexcol no-flexwrap">
+                    <label>{{localize "the-expanse.velocity"}}</label>
+                    <div class="flexrow no-flexwrap">
+                        <select name="data.velocity.category">
+                            {{#select data.data.velocity.category}}
+                            {{#each data.config.velocityCategory as |category|}}
+                            <option value="{{@key}}">{{localize (concat "the-expanse." @key)}}</option>
+                            {{/each}}
+                            <option value="velCustom">{{localize (concat "the-expanse.velCustom")}}</option>
+                            {{/select}}
+                        </select>    
+                        <span>/</span>
+                        <input type="number" name="data.velocity.catMod" value="{{data.data.velocity.catMod}}" data-dtype="Number">
+                    </div>
+                </div>
+
+                <div class="flexcol flex-align-center">
+                    <label>{{localize "the-expanse.handling"}}</label>
+                    <input type="number" name="data.handling.mod" value="{{data.data.handling.mod}}" data-dtype="Number">
+                </div>
+
+                <div class="flexcol flex-align-center">
+                    <label>{{localize "the-expanse.item.cost"}}</label>
+                    <input type="text" name="data.cost" value="{{data.data.cost}}" data-dtype="Number">
+                </div>
+
+            </div>
+
+            <div class="flexrow">
+                <div class="flexcol flex-align-center">
+                    <label>{{localize "the-expanse.defense"}}</label>
+                    <input type="number" disabled name="data.defenseTotal" value="{{data.data.defenseTotal}}" data-dtype="Number">
+                </div>
+
+                <div class="flexcol flex-align-center">
+                    <label>{{localize "the-expanse.hull"}}</label>
+                    <input type="number" name="data.hull" value="{{data.data.hull}}" data-dtype="Number">
+                </div>
+
+                <div class="flexcol flex-align-center">
+                    <label>{{localize "the-expanse.vehicleArmor"}}</label>
+                    <input type="number" name="data.armorRating" value="{{data.data.armorRating}}" data-dtype="Number">
+                </div>
+
+                <div class="flexcol flex-align-center">
+                    <label>{{localize "the-expanse.coverRating"}}</label>
+                    <input type="number" name="data.coverRating" value="{{data.data.coverRating}}" data-dtype="Number">
+                </div>
+
+                <div class="flexcol flex-align-center">
+                    <label>{{localize "the-expanse.ram"}}</label>
+                    <div class="flexrow flex-align-center">
+                        <input type="number" name="data.ramDmg" value="{{data.data.ramDmg}}" data-dtype="Number">
+                        <span>{{localize "the-expanse.settings.d6"}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{!-- Spacer --}}
+        <div class="spacer"></div>
+
+        {{!-- Vehicle Damage --}}
+        <div class="vehicle-damage-chart stats-block colorset-second-tier">
+            <h2>{{localize "the-expanse.item.damage"}}</h2>
+            <ul class="damage-chart">
+                <li class="flexrow colorset-third-tier header">
+                    <p class="velocity">{{localize "the-expanse.velClass"}}</p>
+                    <p class="feature-controls">{{localize "the-expanse.collision"}}</p>
+                    <p class="feature-controls">{{localize "the-expanse.sideswipe"}}</p>
+                </li>
+                {{#each data.config.velocityCategory as |velocity|}}
+                <li class="flexrow collision {{#if (eq ../data.data.velocity.category @key)}}highlight{{/if}}">
+                    <p class="velocity">{{localize (concat "the-expanse." @key)}}</p>
+                    <p class="feature-controls" data-qtd-dice="{{velocity.colDmg}}">
+                        <a class="roll-vehicle-dmg">{{velocity.colDmg}}</a>
+                        <a class="roll-vehicle-dmg add-ram"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                    </p>
+                    <p class="feature-controls" data-qtd-dice="{{velocity.sideDmg}}">
+                        <a class="roll-vehicle-dmg">{{velocity.sideDmg}}</a>
+                        <a class="roll-vehicle-dmg add-ram"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                    </p>
+                </li>
+                {{/each}}
+                <li class="flexrow flex-align-center {{#if (eq data.data.velocity.category "velCustom")}}highlight{{/if}}">
+                    <p class="velocity">{{localize "the-expanse.velCustom"}}</p>
+                    <p class="feature-controls flexrow flex-align-center flex-justify-center custom-velocity collision" data-qtd-dice="{{data.data.customCollisionDmg}}d6">
+                        <input type="number" name="data.customCollisionDmg" value="{{data.data.customCollisionDmg}}" data-dtype="Number">
+                        <a class="roll-vehicle-dmg">{{localize "the-expanse.settings.d6"}} </a>
+                        <a class="roll-vehicle-dmg add-ram"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                    </p>
+                    <p class="feature-controls flexrow flex-align-center flex-justify-center custom-velocity" data-qtd-dice="{{data.data.customSideswipeDmg}}d6">
+                        <input type="number" name="data.customSideswipeDmg" value="{{data.data.customSideswipeDmg}}" data-dtype="Number">
+                        <a class="roll-vehicle-dmg">{{localize "the-expanse.settings.d6"}} </a>
+                        <a class="roll-vehicle-dmg add-ram"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    {{!-- Passengers --}}
+    <div class="passenger-container stats-block colorset-second-tier">
+        <h2>{{localize "the-expanse.passengers"}} [{{data.data.pob}} / <input type="number" name="data.capacity" value="{{data.data.capacity}}" data-dtype="Number">]</h2>
+        <div class="passenger-list">
+            <ol>
+                {{#each data.passengers as |passenger|}}
+                <li class="flexrow flex-justify-between feature-controls" data-passenger-key="{{@key}}">
+                    <div class="flexrow flex-justify-start flex-align-center">
+                        <img src="{{passenger.picture}}">
+                        <span>{{passenger.name}}</span>
+                        {{#if passenger.isConductor}}
+                        <span>({{localize "the-expanse.conductor"}})</span>
+                        {{/if}}
+                    </div>
+                    <a class="flex-align-end remove-passenger"><i class="fa fa-times"></i></a>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+
+    {{#if isGM}}
+    {{!-- GM Secret Notes --}}
+    <div class="stats-block gm-secret-notes colorset-third-tier">
+        <h2 class="">{{localize "the-expanse.gmNotes"}}</h2>
+        <textarea class="free-text" name="data.gmNotes" cols="30" rows="10">{{data.data.gmNotes}}</textarea>
+    </div>
+    {{/if}} 
+</form>

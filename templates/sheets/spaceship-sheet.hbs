@@ -1,0 +1,306 @@
+<form class="{{cssClass}} the-expanse sheet colorset-{{data.colorScheme}} spaceship" autocomplete="off">
+
+    <input name="name" class="spaceship-name colorset-first-tier" type="text" value="{{actor.name}}" placeholder="{{localize "the-expanse.item.name"}}"/>
+    <div class="flexrow image-description">
+        <img class="ship-image" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+        <div class="ship-desc">
+            <label class="colorset-second-tier desc">{{localize "the-expanse.item.desc"}}</label>
+            {{editor content=data.data.description target="data.description" button=true owner=owner editable=true}}
+        </div>
+    </div>
+
+    {{!-- Spaceship Systems --}}
+    <div class="stats-block systems colorset-second-tier">
+        <h2>{{localize "the-expanse.spaceship.systems"}}</h3>
+        <ul class="systems-list">
+            <datalist id="{{this.actor.data.type}}-{{this.actor.id}}-list">
+                <option value=""></option>
+                {{#each data.config.focus as |focus|}}
+                <option value="{{focus.name}}"></option>
+                {{/each}}
+            </datalist>
+            <li class="flexrow">
+                <p class="system-role title">{{localize "the-expanse.spaceship.role"}}</p>
+                <p class="system-operator">{{localize "the-expanse.spaceship.op"}}</p>
+                <p class="system-abl">{{localize "the-expanse.abl"}}</p>
+                <p class="system-focus">{{localize "the-expanse.focus"}}</p>
+            </li>
+            {{#each data.data.systems as |system sysName|}}
+            <li class="feature-controls {{sysName}} flexrow" data-sys-name={{sysName}}>
+                <p class="system-role">{{localize (concat "the-expanse.spaceship.operator." sysName)}} 
+                    <a class="system-roll roll-maneuver data-sys-name={{sysName}}" data-sys-box="1"><i class="fas fa-dice"></i></a>
+                </p>
+                <select name="data.systems.{{sysName}}.operator" class="system-operator">
+                    {{#select system.operator}}
+                    <option value="crew">{{localize "the-expanse.spaceship.crew"}}</option>
+                    {{#each ../data.passengers as |passenger|}}
+                    <option value="{{passenger.id}}">{{passenger.name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                <select name="data.systems.{{sysName}}.useAbl" class="system-abl">
+                    {{#select system.useAbl}}
+                    {{#each ../data.config.abilities as |name type|}}
+                    <option value="{{type}}">{{name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                <input name="data.systems.{{sysName}}.useFocus" class="system-focus" type="text" value="{{system.useFocus}}" placeholder="{{localize "the-expanse.focus"}}" list="{{../this.actor.data.type}}-{{../this.actor.id}}-list"/>
+            </li>
+            {{/each}}
+        </ul>
+        
+    </div>
+
+    {{!-- Ship Parameters --}}
+    <div class="flexrow">
+        {{!-- Parameters First Column --}}
+        <div class="flexcol container">
+
+            {{!-- Crew Block --}}
+            <div class="crew colorset-third-tier stats-block">
+                <h2>{{localize "the-expanse.spaceship.crew"}}</h2>
+                <div class="crew-details flexcol">
+                    <div class="flex-align-center flexrow">
+                        <label class="current-crew">{{localize "the-expanse.spaceship.crewCur"}}</label>
+                        <input class="current-crew" type="number" name="data.crew.current" value="{{data.data.crew.current}}" data-dtype="Number" />
+                        <label class="min-typ-crew">{{localize "the-expanse.spaceship.crewMin"}}/{{localize "the-expanse.spaceship.crewTyp"}}</label>
+                        <div class="min-typ-crew flexrow">
+                            <input class="min-typ-crew" type="number" name="data.crew.min" disabled value="{{data.data.crew.min}}" data-dtype="Number" />
+                            <span>(</span>
+                            <input class="min-typ-crew" type="number" name="data.crew.typical" disabled value="{{data.data.crew.typical}}" data-dtype="Number" />
+                            <span>)</span>
+                        </div>
+                    </div>
+
+                    <div class="flexrow flex-align-center flex-justify-center crew-competence">
+                        <label class="competence-label">{{localize "the-expanse.spaceship.competence"}}</label>
+                        <select class="competence-list" name="data.crew.competence">
+                            {{#select data.data.crew.competence}}
+                            {{#each data.config.spaceshipCrewCompetence as |compet competKey|}}
+                            <option value="{{compet}}">{{localize (concat "the-expanse.spaceship.competenceLevel." competKey)}} (+{{compet}})</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="flexrow hull-sensor stats-block colorset-third-tier ">
+
+                {{!-- Hull Block --}}
+                <fieldset class="hull">
+                    <legend><a class="roll-hull"><i class="fas fa-dice"></i></a> {{localize "the-expanse.spaceship.hull"}}</legend>
+                    <div class="flexrow flex-align-center size">
+                        <label class="hull-label">{{localize "the-expanse.spaceship.size"}}</label>
+                        <select class="ship-size" name="data.size" class="dice-size">
+                            {{#select data.data.size}}
+                            {{#each data.config.spaceshipSize as |size sizeKey|}}
+                            <option value="{{size}}">{{localize (concat "the-expanse.spaceship.sizeType." sizeKey)}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </div>
+                    <div class="flexrow flex-align-center">
+                        <label class="hull-label">{{localize "the-expanse.base"}}</label>
+                        <p class="hull-value user-data">{{data.data.hull.base}}</p>
+                    </div>
+                    <div class="flexrow flex-align-center">
+                        <label class="hull-label">{{localize "the-expanse.total"}}</label>
+                        <p class="hull-value user-data">{{data.data.hull.total}}</p>
+                    </div>
+                </fieldset>
+
+                {{!-- Sensors Block --}}
+                <div class="flexcol">
+                    <div class="crew-size-penalty flexrow flex-align-center">
+                        <label>{{localize "the-expanse.spaceship.crewPenalty"}}</label>                        
+                        <p class="user-data">{{data.data.crewPenalty}}</p>
+                    </div>    
+                    <fieldset class="sensors">
+                        <legend>{{localize "the-expanse.spaceship.systemName.sensors"}}</legend>
+                        <div class="flexrow flex-align-center">
+                            <label class="sensor-field">{{localize "the-expanse.base"}}</label>
+                            <input class="sensor-field" type="number" name="data.systems.sensors.base" value="{{data.data.systems.sensors.base}}" data-dtype="Number" />
+                        </div>
+                        <div class="flexrow flex-align-center">
+                            <label class="sensor-field">{{localize "the-expanse.total"}}</label>
+                            <p class="sensor-field user-data">{{data.data.systems.sensors.total}}</p>
+                        </div>
+                    </fieldset>    
+                </div>
+            </div>
+
+            {{!-- Losses Section --}}
+            <div class="stats-block losses colorset-third-tier">
+                <h2>{{localize "the-expanse.spaceship.lossesCond"}}</h2>
+                <ul>
+                    {{#each data.data.losses as |v k|}}
+                    <li>
+                        <label><h3>{{localize (concat "the-expanse.spaceship." k "Loss")}}</h3></label>
+                        <ul>
+                            {{#each v as |v2 k2|}}  
+                            <li class="flexrow feature-controls" data-loss-sev="{{k}}" data-loss-type="{{k2}}">
+                                <label class="loss-name">{{localize (concat "the-expanse.spaceship." k2 "Loss")}} [{{v2.actual}}]</label>
+                                {{#each v2.maxArray as |v3 k3|}}
+                                <a class="loss-checkbox change-loss {{#if v3}}full-box{{/if}}" data-box-number="{{k3}}"></a>
+                                {{/each}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    {{/each}}
+                </ul>
+
+                {{!-- Loss Control Block --}}
+                <h3 class="feature-controls" data-passenger-id="{{data.data.systems.damageControl.operator}}">
+                    {{localize "the-expanse.damageControl"}}
+                    <a class="roll-maneuver {{#if data.isSynth}}is-synth{{/if}}" data-sys-name="damageControl" title="{{localize "the-expanse.damageControl"}}">
+                        <i class="fas fa-cogs"></i>
+                    </a>
+                </h3>
+                <div class="flexrow flex-align-center flex-justify-center damage-control-box">
+                    <label class="tn-input">{{localize "the-expanse.targetNumber"}}</label>
+                    <input class="numeric-input" type="number" name="data.systems.damageControl.TN" value="{{data.data.systems.damageControl.TN}}" data-dtype="Number" />
+                    <label class="threshold-input">{{localize "the-expanse.testThreshold"}} ({{localize "the-expanse.targetCurrent"}})</label>
+                    <div class="flexrow threshold-box">
+                        <input class="numeric-input" type="number" name="data.systems.damageControl.threshold.target" value="{{data.data.systems.damageControl.threshold.target}}" data-dtype="Number" />
+                        <span>/</span>
+                        <input class="numeric-input" type="number" name="data.systems.damageControl.threshold.current" value="{{data.data.systems.damageControl.threshold.current}}" data-dtype="Number" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flexcol">
+
+            {{!-- Passenger Container --}}
+            <div class="passenger flexcol colorset-third-tier stats-block">
+                <h2>{{localize "the-expanse.passengers"}} [{{data.data.pob}}]</h2>
+                <ul class="passenger-list">
+                    {{#each data.passengers as |passenger|}}
+                    <li class="flexrow feature-controls flex-align-center" data-passenger-key="{{@key}}" data-passenger-id="{{passenger.id}}"  data-passenger-name="{{passenger.name}}">
+                        <a class="remove-passenger"><i class="fa fa-minus"></i></a>
+                        <img src="{{passenger.picture}}" class="passenger-token">
+                        <div class="flexrow flex-justify-start flex-align-center passenger-name">
+                            <span>{{passenger.name}}</span>
+                            {{#if passenger.isCaptain}}<span>({{localize "the-expanse.spaceship.operator.command"}})</span>{{/if}}
+                            {{#if passenger.isPilot}}<span>({{localize "the-expanse.spaceship.operator.maneuver"}})</span>{{/if}}
+                            {{#if passenger.isSensorOp}}<span>({{localize "the-expanse.spacehsip.operator.sensors"}})</span>{{/if}}
+                        </div>
+                        <a class="passenger-damage-control roll-maneuver" data-sys-name="damageControl" title="{{localize "the-expanse.damageControl"}}"><i class="fas fa-cogs"></i></a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            {{!-- Weapon Block --}}
+            <div class="stats-block colorset-third-tier">
+                <h2>{{localize "the-expanse.spaceship.weapon"}}</h2>
+                <ul class="weapon-list">
+                    <li class="flexrow">
+                        <div class="item-img"></div>
+                        <div class="weapon-name"><label for="">{{localize "the-expanse.item.name"}}</label></div>
+                        <div class="weapon-dmg"><label for="">{{localize "the-expanse.formula"}}</label></div>
+                        {{!-- <div class="weapon-ctrl add"><a><i class="fa fa-plus"></i></a></div> --}}
+                    </li>
+                    {{#each data.weapon as |item|}}
+                    <li class="flexrow item-desc feature-controls flex-align-center" data-item-id="{{item._id}}">
+                        <img class="item-img" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                        <p class="weapon-name {{#unless item.data.isActive}}inactive{{/unless}}">{{item.name}}</p>
+                        <p class="weapon-dmg roll-damage {{#if item.data.isActive}}roll{{else}}inactive{{/if}}" title="{{localize "the-expanse.rollDamage"}}">{{item.data.damage}}</p>
+                        <a class="weapon-icon toggle {{#unless item.data.isActive}}inactive{{/unless}}"><i class="fas fa-power-off"></i></a>
+                        <a class="weapon-icon edit"><i class="fas fa-edit"></i></a>
+                        <a class="weapon-icon remove"><i class="fa fa-trash"></i></a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            {{#if isGM}}
+            {{!-- GM Secret Notes --}}
+            <div class="stats-block gm-secret-notes colorset-third-tier">
+                <h2 class="">{{localize "the-expanse.gmNotes"}}</h2>
+                <textarea class="free-text" name="data.gmNotes" cols="30" rows="10">{{data.data.gmNotes}}</textarea>
+            </div>
+            {{/if}}
+
+            {{!-- Quality Block --}}
+            <div class="quality-block colorset-third-tier stats-block">
+                <h2>{{localize "the-expanse.spaceship.quality"}}</h2>
+                <ul class="quality-list">
+                    <li class="flexrow">
+                        <div class="item-img"></div>
+                        <div class="feature-name"><label>{{localize "the-expanse.item.name"}}</label></div>
+                        <div class="feature-type"><label>{{localize "the-expanse.spaceship.qualityType"}}</label></div>
+                        <div class="feature-value"><label>{{localize "the-expanse.value"}}</label></div>
+                    </li> 
+                    {{#each data.qualities as |item|}}
+                    <li class="flexrow item-desc feature-controls flex-align-center" data-item-id="{{item._id}}">
+                        <img class="item-img" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                        <p class="feature-name">{{item.name}}</p>
+                        <p class="feature-type">{{localize (concat "the-expanse.spaceship." item.data.type)}}</p>
+                        {{#if (eq item.data.type "sensorMod")}}
+                        <p class="feature-value">{{item.data.sensorMod}}</p>
+                        {{/if}}
+                        {{#if (eq item.data.type "maneuverSizeMod")}}
+                        <p class="feature-value">{{item.data.maneuverSizeStep}}</p>
+                        {{/if}}
+                        {{#if (eq item.data.type "juiceMod")}}
+                        <p class="feature-value">{{item.data.juiceMod}}</p>
+                        {{/if}}
+                        {{#if (eq item.data.type "hullPlating")}}
+                        <p class="feature-value">{{item.data.hullPlating}}</p>
+                        {{/if}}
+                        {{#if (eq item.data.type "hullMod")}}
+                        <p class="feature-value">{{item.data.hullMod}}</p>
+                        {{/if}}
+                        {{#if (or (eq item.data.type "rollable") (eq item.data.type "special"))}}
+                        <p class="feature-value">—</p>
+                        {{/if}}
+                        <a class="edit feature-icon"><i class="fas fa-edit"></i></a>
+                        <a class="remove feature-icon"><i class="fa fa-trash"></i></a>
+                    </li>
+                    {{/each}}
+                </ul>
+
+                {{!-- Flaws Block --}}
+                <h2>{{localize "the-expanse.spaceship.flaw"}}</h2>
+                <ul class="quality-list">
+                    <li class="flexrow">
+                        <div class="item-img"></div>
+                        <div class="feature-name"><label>{{localize "the-expanse.item.name"}}</label></div>
+                        <div class="feature-type"><label>{{localize "the-expanse.spaceship.qualityType"}}</label></div>
+                        <div class="feature-value"><label>{{localize "the-expanse.value"}}</label></div>
+                    </li> 
+                    {{#each data.flaws as |item|}}
+                    <li class="flexrow item-desc feature-controls flex-align-center" data-item-id="{{item._id}}">
+                        <img class="item-img" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                        <p class="feature-name">{{item.name}}</p>
+                        <p class="feature-type">{{localize (concat "the-expanse.spaceship." item.data.type)}}</p>
+                        {{#if (eq item.data.type "sensorMod")}}
+                        <p class="feature-value">{{item.data.sensorMod}}</p>
+                        {{/if}}
+                        {{#if (eq item.data.type "maneuverSizeMod")}}
+                        <p class="feature-value">{{item.data.maneuverSizeStep}}</p>
+                        {{/if}}
+                        {{#if (eq item.data.type "juiceMod")}}
+                        <p class="feature-value">{{item.data.juiceMod}}</p>
+                        {{/if}}
+                        {{#if (eq item.data.type "hullPlating")}}
+                        <p class="feature-value">{{item.data.hullPlating}}</p>
+                        {{/if}}
+                        {{#if (eq item.data.type "hullMod")}}
+                        <p class="feature-value">{{item.data.hullMod}}</p>
+                        {{/if}}
+                        {{#if (or (eq item.data.type "rollable") (eq item.data.type "special"))}}
+                        <p class="feature-value">—</p>
+                        {{/if}}
+                        <a class="edit feature-icon"><i class="fas fa-edit"></i></a>
+                        <a class="remove feature-icon"><i class="fa fa-trash"></i></a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>

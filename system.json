@@ -1,0 +1,41 @@
+{
+    "name": "the-expanse",
+    "title": "The Expanse AGE System (unofficial)",
+    "description": "Unofficial The Expanse implementation based on AGE system from VK Dolea 0.7.10",
+    "version": "0.0.1",
+    "templateVersion": 3,
+    "author": "Dellatosa",
+
+    "scripts": [],
+    "styles": ["styles/the-expanse.css"],
+    "esmodules": ["the-expanse.js"],
+    "packs": [],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "fr",
+            "name": "Français",
+            "path": "lang/fr.json"
+        },
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "lang/es.json"
+        },
+        {
+            "lang": "pt-br",
+            "name": "Português (Brasil)",
+            "path": "lang/ptbr.json"
+        }
+    ],
+    "socket": false,
+    "initiative": "3d6 + @initiative",
+    "gridDistance": 2,
+    "gridUnits": "m",
+    "minimumCoreVersion": "0.8.5",
+    "compatibleCoreVersion": "0.8.8"
+}

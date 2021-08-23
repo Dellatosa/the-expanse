@@ -1,0 +1,79 @@
+<div class="flexrow general-aid-bar {{#unless isBlock}}colorset-first-tier{{/unless}}">
+
+    {{#unless isBlock}}
+    {{!-- Advancement Points Log --}}
+    <div class="flexcol flex-align-center">
+        <label>{{localize "the-expanse.advPoints"}}</label>
+        <input type="number" name="data.xp.advPoints" value="{{data.data.xp.advPoints}}" data-dtype="Number" />
+    </div>
+
+    {{!-- Threshold Tracker --}}
+    <div class="flexcol flex-align-center">
+        <label>{{localize "the-expanse.testThreshold"}}</label>
+        <input type="number" name="data.advTestThreshold" value="{{data.data.advTestThreshold}}" data-dtype="Number" />
+    </div>
+    {{/unless}}
+
+    {{!-- Aim Control --}}
+    <div class="flexcol flex-align-center feature-controls">
+        <label>{{localize "the-expanse.aim"}}</label>
+        <div class="flexrow no-flexwrap">
+            {{#unless isBlock}}
+            <input type="number" name="data.aim.value" value="{{data.data.aim.value}}" data-dtype="Number" />
+            {{/unless}}
+            <input type="checkbox" name="data.aim.active" {{checked data.data.aim.active}} class="checkbox"/>
+        </div>
+    </div>
+
+    {{!-- All Out Attack Control --}}
+    <div class="flexcol flex-align-center">
+        <label>{{localize "the-expanse.allOutAttack"}}</label>
+        <div class="flexrow no-flexwrap">
+            {{#unless isBlock}}
+            <input type="number" name="data.allOutAttack.dmgBonus" value="{{data.data.allOutAttack.dmgBonus}}" data-dtype="Number" />
+            <div>+</div>
+            <input type="number" name="data.allOutAttack.defensePenalty" value="{{data.data.allOutAttack.defensePenalty}}" data-dtype="Number" />
+            <div>-</div>
+            {{/unless}}
+            <input type="checkbox" name="data.allOutAttack.active" {{checked data.data.allOutAttack.active}} class="checkbox"/>
+        </div>
+    </div>
+
+    {{!-- Defend Maneuver Control --}}
+    <div class="flexcol flex-align-center feature-controls" data-guardup-active="{{data.data.guardUp.active}}">
+        <label>{{localize "the-expanse.defendManeuver"}}</label>
+        <div class="flexrow no-flexwrap">
+            {{#unless isBlock}}
+            <input type="number" name="data.defend.defenseBonus" value="{{data.data.defend.defenseBonus}}" data-dtype="Number" />
+            {{/unless}}
+            <input type="checkbox" name="data.defend.active" class="defend-maneuver" {{checked data.data.defend.active}} class="checkbox"/>
+        </div>
+    </div>
+
+    {{!-- Guard Up Maneuver Control --}}
+    <div class="flexcol flex-align-center feature-controls" data-defend-active="{{data.data.defend.active}}">
+        <label>{{localize "the-expanse.guardUp"}}</label>
+        <div class="flexrow no-flexwrap">
+            {{#unless isBlock}}
+            <input type="number" name="data.guardUp.defenseBonus" value="{{data.data.guardUp.defenseBonus}}" data-dtype="Number" />
+            <div>+</div>
+            <input type="number" name="data.guardUp.testPenalty" value="{{data.data.guardUp.testPenalty}}" data-dtype="Number" />
+            <div>-</div>
+            {{/unless}}
+            <input type="checkbox" class="guardup-maneuver" name="data.guardUp.active" {{checked data.data.guardUp.active}} class="checkbox"/>
+        </div>
+    </div>
+
+    {{#unless isBlock}}
+    {{!-- Initiative Mod --}}
+    <div class="flexcol flex-align-center">
+        <label>{{localize "the-expanse.initiative"}}</label>
+        <div class="flexrow no-flexwrap">
+            <input type="number" disabled name="data.initiative" value="{{data.data.initiative}}" data-dtype="Number" />
+            <input type="number" name="data.initiativeMod" value="{{data.data.initiativeMod}}" data-dtype="Number" />
+            <label>{{localize "the-expanse.mod"}}</label>
+        </div>
+    </div>
+    {{/unless}}
+
+</div>
