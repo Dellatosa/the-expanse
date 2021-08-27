@@ -242,7 +242,7 @@ Hooks.once("ready", async function() {
 
     // Check if Dice so Nice is active to register Stunt Die option
     if (game.modules.get("dice-so-nice") && game.modules.get("dice-so-nice").active) {
-        import("/modules/dice-so-nice/DiceColors.js").then((diceColors) => {
+        import("../../modules/dice-so-nice/DiceColors.js").then((diceColors) => {
             
             const colorset = diceColors.COLORSETS;
             let colorChoices = {};
