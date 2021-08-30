@@ -335,15 +335,15 @@ export const registerSystemSettings = function() {
     hint: "SETTINGS.ExpanseDicesHint",
     scope: "client",
     config: true,
-    default: "TerreA",
+    default: "TerreAE",
     type: String,
     choices:{
-      "TerreA": "Terre blanc - bleu",
-      "TerreB": "Terre bleu - blanc",
-      "MarsA": "Mars rouge - noir",
-      "MarsB": "Mars noir - rouge",
-      "CeintureA": "Ceinture blanc - noir",
-      "CeintureB": "Ceinture noir - blanc"
+      "TerreAE": "Terre blanc - bleu",
+      "TerreEA": "Terre bleu - blanc",
+      "MarsRN": "Mars rouge - noir",
+      "MarsNR": "Mars noir - rouge",
+      "CeintureBN": "Ceinture blanc - noir",
+      "CeintureNB": "Ceinture noir - blanc"
     }//,
     //onChange:()=>{game.user.setFlag("the-expanse", "stuntSoNice", game.settings.get("the-expanse", "stuntSoNice"))}
   });

@@ -21,6 +21,9 @@ import * as AgeChat from "./modules/age-chat.js";
 import * as Setup from "./modules/setup.js";
 import * as migrations from "./modules/migration.js";
 
+import {ExpanseNormalDice} from './modules/die.js';
+import {ExpanseStuntDice} from './modules/die.js';
+
 async function preloadHandlebarsTemplates() {
     const path = `systems/the-expanse/templates/partials/`;
     const templatePaths = [
@@ -84,7 +87,11 @@ Hooks.once("init", async function() {
     // Define Token Icons
     CONFIG.statusEffects = ageSystem.AGEstatusEffects;
     // Changing a few control icons
-    CONFIG.controlIcons.defeated = "systems/the-expanse/resources/imgs/effects/hasty-grave.svg"
+    CONFIG.controlIcons.defeated = "systems/the-expanse//systems/the-expanse/resources/imgs/effects/hasty-grave.svg"
+
+    // Definition des dés spécifiques
+    CONFIG.Dice.terms["n"] = ExpanseNormalDice;
+	CONFIG.Dice.terms["s"] = ExpanseStuntDice;
 
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("the-expanse", ageSystemSheetCharacter, {
@@ -367,4 +374,145 @@ Hooks.on("preCreateItem", (itemCreated, itemCreatedData, options, userId) => {
             return options.temporary = true;
         }
     }
+});
+
+Hooks.once('diceSoNiceReady', (dice3d) => {
+
+    dice3d.addColorset({
+		name:'expRouge',
+		description:'The Expanse - Rouge',
+		category:'The Expanse',
+		foreground:'black',
+		background:'#FF0000',
+		outline:'#FF0000',
+		edge:'#FF0000',
+		texture:'none'
+	},"no");
+
+    dice3d.addColorset({
+		name:'expBlanc',
+		description:'The Expanse - Blanc',
+		category:'The Expanse',
+		foreground:'black',
+		background:'#FFFFFF',
+		outline:'#FFFFFF',
+		edge:'#FFFFFF',
+		texture:'none'
+	},"no");
+
+    dice3d.addColorset({
+		name:'expNoir',
+		description:'The Expanse - Noir',
+		category:'The Expanse',
+		foreground:'white',
+		background:'#000000',
+		outline:'#000000',
+		edge:'#000000',
+		texture:'none'
+	},"no");
+
+    dice3d.addColorset({
+		name:'expBleu',
+		description:'The Expanse - Bleu',
+		category:'The Expanse',
+		foreground:'white',
+		background:'#000080',
+		outline:'#000080',
+		edge:'#000080',
+		texture:'none'
+	},"no");
+
+    // Ceinture Blanc - Noir
+    dice3d.addSystem({id:"ceintureBN",name:"Ceinture blanc - noir"},"exclusive");
+    
+    dice3d.addDicePreset({
+        type:"dn",
+        labels:[
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-blanc.png'
+        ],
+        bumpMaps:[
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
+        ],
+        colorset: "expBlanc",
+        system: "ceintureBN"
+    });
+
+	dice3d.addDicePreset({
+        type:"ds",
+        labels:[
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-noir.png'
+        ],
+        bumpMaps:[
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
+        ],
+        colorset: "expNoir",
+        system: "ceintureBN"
+    });
+
+    // Ceinture Noir - Blanc
+    dice3d.addSystem({id:"ceintureNB",name:"Ceinture noir - blanc"},"exclusive");
+    
+    dice3d.addDicePreset({
+        type:"ds",
+        labels:[
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-blanc.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-blanc.png'
+        ],
+        bumpMaps:[
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
+        ],
+        colorset: "expBlanc",
+        system: "ceintureNB"
+    });
+
+	dice3d.addDicePreset({
+        type:"dn",
+        labels:[
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-noir.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-noir.png'
+        ],
+        bumpMaps:[
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
+            '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
+        ],
+        colorset: "expNoir",
+        system: "ceintureNB"
+    });
 });
