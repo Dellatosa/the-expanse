@@ -109,7 +109,7 @@ export class AgeTracker extends Application {
 	async _onRollComp() {
 		const compType = game.i18n.localize(`SETTINGS.comp${game.settings.get("the-expanse", "complication")}`);
 		const flavor = game.i18n.format("the-expanse.chatCard.compRoll", {compType});
-		let compRoll = new Roll("1d6");
+		let compRoll = new Roll("1dn");
 		return await compRoll.toMessage({flavor, rollMode: "selfroll", whisper: [game.user.id]});
 	}
 

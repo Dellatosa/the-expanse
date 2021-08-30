@@ -626,28 +626,32 @@ export async function vehicleDamage ({
     // Adds extra damage for CTRL + click (+1D6) or CTRL + ALT + click (+2D6)
     if (event.ctrlKey) {
         if (event.altKey) {
-            damageFormula = `${damageFormula} + 2d6`
+            damageFormula = `${damageFormula} + 2dn`
             messageData.flavor += ` | +2D6`;
         } else {
-            damageFormula = `${damageFormula} + 1d6`
+            damageFormula = `${damageFormula} + 1dn`
             messageData.flavor += ` | +1D6`;
         };
     };
 
     // Adds specific Stunt Damage dice
     if (stuntDamage && stuntDamage !== 0) {
-        const stuntDmgDice = `${stuntDamage}D6`;
+        //const stuntDmgDice = `${stuntDamage}D6`;
+        const stuntDmgDice = `${stuntDamage}dn`;
+        const stuntDmgDiceFlavor = `${stuntDamage}D6`;
         damageFormula += " + @stuntDmg";
         rollData.stuntDmg = stuntDmgDice;
-        messageData.flavor += ` | +${stuntDmgDice} ${game.i18n.localize("the-expanse.stunts")}`;             
+        messageData.flavor += ` | +${stuntDmgDiceFlavor} ${game.i18n.localize("the-expanse.stunts")}`;             
     };
 
     // Adds Extra Damage dice
     if (dmgExtraDice && dmgExtraDice !== 0) {
-        const extraDice = `${dmgExtraDice}D6`;
+        //const extraDice = `${dmgExtraDice}D6`;
+        const extraDice = `${dmgExtraDice}dn`;
+        const extraDiceFlavor = `${dmgExtraDice}D6`;
         damageFormula += " + @extraDice";
         rollData.extraDice = extraDice;
-        messageData.flavor += ` | +${extraDice}`;             
+        messageData.flavor += ` | +${extraDiceFlavor}`;             
     };
 
     let dmgRoll = await new Roll(damageFormula, rollData).evaluate({async: true});
@@ -780,10 +784,10 @@ export async function itemDamage({
         // Adds extra damage for CTRL + click (+1D6) or CTRL + ALT + click (+2D6)
         if (event.ctrlKey) {
             if (event.altKey) {
-                damageFormula = `${damageFormula} + 2d6`
+                damageFormula = `${damageFormula} + 2dn`
                 messageData.flavor += ` | +2D6`;
             } else {
-                damageFormula = `${damageFormula} + 1d6`
+                damageFormula = `${damageFormula} + 1dn`
                 messageData.flavor += ` | +1D6`;
             };
         };

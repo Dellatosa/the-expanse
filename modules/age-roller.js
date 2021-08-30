@@ -44,7 +44,7 @@ export class AgeRoller extends Application {
 
 	async _onRightClick(event) {
 		event.preventDefault();
-		let roll = await new Roll("1d6").evaluate({async: true});
+		let roll = await new Roll("1dn").evaluate({async: true});
 		return roll.toMessage({}, {rollMode: event.shiftKey ? "blindroll" : ""});
 	}
 

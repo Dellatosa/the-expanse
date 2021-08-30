@@ -169,11 +169,11 @@ export default class ageSpaceshipSheet extends ActorSheet {
         }
 
         if (event.ctrlKey && !event.altKey) {
-            rollFormula += " + 1D6";
+            rollFormula += " + 1Dn";
             messageData.flavor += ` | +1D6`;
         }
         if (event.ctrlKey && event.altKey) {
-            rollFormula += " + 2D6";
+            rollFormula += " + 2Dn";
             messageData.flavor += ` | +2D6`;
         }
         const roll = new Roll(rollFormula).roll();

@@ -358,6 +358,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 		background:'#FF0000',
 		outline:'#FF0000',
 		edge:'#FF0000',
+        //material:'glass',
 		texture:'none'
 	},"no");
 
@@ -369,6 +370,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 		background:'#FFFFFF',
 		outline:'#FFFFFF',
 		edge:'#FFFFFF',
+        //material:'glass',
 		texture:'none'
 	},"no");
 
@@ -380,7 +382,9 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 		background:'#000000',
 		outline:'#000000',
 		edge:'#000000',
+        //material:'glass',
 		texture:'none'
+        
 	},"no");
 
     dice3d.addColorset({
@@ -391,6 +395,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 		background:'#000064',
 		outline:'#000064',
 		edge:'#000064',
+        //material:'glass',
 		texture:'none'
 	},"no");
 
@@ -399,7 +404,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
         case "TerreAE":
             // Terre Blanc - Bleu
             dice3d.addSystem({id:"terreAE",name:"Terre blanc - bleu"},"preferred");
-    
+
             dice3d.addDicePreset({
                 type:"dn",
                 labels:[
@@ -447,7 +452,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
         case "TerreEA":
             // Terre Bleu - Blanc
             dice3d.addSystem({id:"terreEA",name:"Terre bleu - blanc"},"preferred");
-    
+
             dice3d.addDicePreset({
                 type:"ds",
                 labels:[
@@ -591,7 +596,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
         case "CeintureBN":
             // Ceinture Blanc - Noir
             dice3d.addSystem({id:"ceintureBN",name:"Ceinture blanc - noir"},"preferred");
-    
+
             dice3d.addDicePreset({
                 type:"dn",
                 labels:[
@@ -639,7 +644,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
         case "CeintureNB":
             // Ceinture Noir - Blanc
             dice3d.addSystem({id:"ceintureNB",name:"Ceinture noir - blanc"},"preferred");
-    
+
             dice3d.addDicePreset({
                 type:"ds",
                 labels:[
