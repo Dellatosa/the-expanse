@@ -80,9 +80,6 @@
     "SETTINGS.ancestryOptorigin": "Origine",
     "SETTINGS.ancestryOptspecies": "Espèce",
     "SETTINGS.ancestryOptrace": "Race",
-
-    "SETTINGS.stuntSoNice": "Définition des couleur pour le dé de prouesses (dé Dragon) de Dice so Nice",
-    "SETTINGS.stuntSoNiceHint": "Cette couleur ne sera applicable qu'au dé de prouesses (dé Dragon)",
 	
 	"SETTINGS.masterFocusCompendium": "Sélectionner les options du Compendium avec Compétences",
     "SETTINGS.masterFocusCompendiumHint": "Les noms d'objets dans ce Compendium s'afficheront comme des suggestions de compétence sur les feuilles",
@@ -104,8 +101,8 @@
     "SETTINGS.observerRoll": "Permet à un Observateur de faire des jets",
     "SETTINGS.observerRollHint": "Permet aux joueurs avec le rôle d'Observateur de faire des jets depuis les fiches ou les jets de la discussion",
 
-    "SETTINGS.ExpanseDices": "Type de dés The Expanse",
-    "SETTINGS.ExpanseDicesHint": "Sélection du type de dés The Expanse pour l'affichage des résultat dans le chat",
+    "SETTINGS.ExpanseDices": "Set de dés The Expanse",
+    "SETTINGS.ExpanseDicesHint": "Sélection du set de dés The Expanse pour l'affichage dans le chat et avec Dice So Nice (se reconnecter pour appliquer la modification)",
 	
     "the-expanse": {
 	

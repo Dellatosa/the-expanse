@@ -325,13 +325,6 @@ export async function ageRollCheck({
         type: CONST.CHAT_MESSAGE_TYPES.ROLL
     };
 
-    // Configuration of Stunt Die if using Dice so Nice
-    if (game.modules.get("dice-so-nice") && game.modules.get("dice-so-nice").active) {
-        //const stuntDieColorset = game.settings.get("the-expanse", "stuntSoNice");
-        //chatData.roll.terms[2].options.colorset = stuntDieColorset ? stuntDieColorset : "bronze";
-        //chatData.roll.dice[1].options.appearance = diceSoNiceStuntExpanse();
-    };
-
     if (!chatData.sound) chatData.sound = CONFIG.sounds.dice;
     if (rollMode === "blindroll") {
         ChatMessage.create(ChatMessage.applyRollMode(chatData, rollMode));
@@ -339,34 +332,6 @@ export async function ageRollCheck({
         ChatMessage.create(chatData);
     }
 };
-
-/*export function diceSoNiceStuntExpanse() {
-    let dicePeripeties;
-
-    let expanseDiceType = game.settings.get("the-expanse", "ExpanseDices");
-    switch(expanseDiceType) {
-        case "TerreAE":
-            dicePeripeties = { colorset: "custom", foreground: "#FFFFFF", background: "#000080",  edge: "#000080", outline: "#000080", material: "glass", font: "Play", system: "standard" };
-            break;
-        case "TerreEA":
-            dicePeripeties = { colorset: "custom", foreground: "#000080", background: "#FFFFFF",  edge: "#FFFFFF", outline: "#FFFFFF", material: "glass", font: "Play", system: "standard" };
-            break;
-        case "MarsRN":
-            dicePeripeties = { colorset: "custom", foreground: "#FF0000", background: "#000000",  edge: "#000000", outline: "#000000", material: "glass", font: "Play", system: "standard" };
-            break;
-        case "MarsNR":
-            dicePeripeties = { colorset: "custom", foreground: "#000000", background: "#FF0000",  edge: "#FF0000", outline: "#FF0000", material: "glass", font: "Play", system: "standard" };
-            break;
-        case "CeintureBN":
-            dicePeripeties = { colorset: "custom", foreground: "#FFFFFF", background: "#000000",  edge: "#000000", outline: "#000000", material: "glass", font: "Play", system: "standard" };
-            break;
-        case "CeintureNB":
-            dicePeripeties = { colorset: "custom", foreground: "#000000", background: "#FFFFFF",  edge: "#FFFFFF", outline: "#FFFFFF", material: "glass", font: "Play", system: "standard" };
-            break;
-    }
-
-    return dicePeripeties
-};*/
 
 async function getAgeRollOptions(itemRolled, data = {}) {
     // Ve se item rolado e arma, poder ou null/outro, 

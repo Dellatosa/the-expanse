@@ -80,9 +80,6 @@
     "SETTINGS.ancestryOptorigin": "Origen",
     "SETTINGS.ancestryOptspecies": "Especie",
     "SETTINGS.ancestryOptrace": "Raza",
-	
-	"SETTINGS.stuntSoNice": "Color del Dado de Proeza en Dice so Nice",
-    "SETTINGS.stuntSoNiceHint": "Este color se aplicará sólo en el dado de proeza",
 
     "SETTINGS.masterFocusCompendium": "Selección Compendio Concentración de Atributos",
     "SETTINGS.masterFocusCompendiumHint": "Los objetos dentro de este Compendio se muestran como sugerencias para cualquier Concentración de Atributos en la hoja",

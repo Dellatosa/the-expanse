@@ -81,9 +81,6 @@
     "SETTINGS.ancestryOptspecies": "Espécie",
     "SETTINGS.ancestryOptrace": "Raça",
 
-    "SETTINGS.stuntSoNice": "Cores do Dado de Façanha para Dice so Nice",
-    "SETTINGS.stuntSoNiceHint": "Esta cor será aplicada apenas ao Dado de Façanha desse usuário",
-
     "SETTINGS.masterFocusCompendium": "Selecione Compêndio com opções de Foco",
     "SETTINGS.masterFocusCompendiumHint": "Os nomes dos itens dentro deste Compêndio serão exibidos como sugestão de Foco nas fichas",
 

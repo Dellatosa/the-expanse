@@ -328,7 +328,7 @@ export const registerSystemSettings = function() {
   // });
 
   /**
-   * Select Dice so Nice effect for Stunt Die
+   * Select Dice so Nice and chat dice set
    */
    game.settings.register("the-expanse", "ExpanseDices", {
     name: "SETTINGS.ExpanseDices",
@@ -344,8 +344,7 @@ export const registerSystemSettings = function() {
       "MarsNR": "Mars noir - rouge",
       "CeintureBN": "Ceinture blanc - noir",
       "CeintureNB": "Ceinture noir - blanc"
-    }//,
-    //onChange:()=>{game.user.setFlag("the-expanse", "stuntSoNice", game.settings.get("the-expanse", "stuntSoNice"))}
+    }
   });
 
   /**
@@ -376,22 +375,6 @@ export const loadCompendiaSettings = function() {
     type: String,
     choices: CONFIG.ageSystem.itemCompendia,
     onChange:()=>{CONFIG.ageSystem.focus = compendiumList(game.settings.get("the-expanse", "masterFocusCompendium"))}
-  });
-};
-
-export function stuntSoNice(colorChoices) {
-  /**
-   * Select Dice so Nice effect for Stunt Die
-   */
-  game.settings.register("the-expanse", "stuntSoNice", {
-    name: "SETTINGS.stuntSoNice",
-    hint: "SETTINGS.stuntSoNiceHint",
-    scope: "client",
-    config: true,
-    default: "bronze",
-    type: String,
-    choices: colorChoices,
-    onChange:()=>{game.user.setFlag("the-expanse", "stuntSoNice", game.settings.get("the-expanse", "stuntSoNice"))}
   });
 };
 
