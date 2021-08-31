@@ -147,6 +147,20 @@ export default class ageSystemSheetCharacter extends ActorSheet {
     }
     
     activateListeners(html) {
+
+        // Gestion du drag and drop pour les items
+        if (this.actor.isOwner) {
+            let handler = ev => this._onDragStart(ev);
+            // Find all items on the character sheet.
+            html.find('div.item-box').each((i, div) => {
+                // Ignore for the header row.
+                if (div.classList.contains("item-header")) return;
+                // Add draggable attribute and dragstart listener.
+                div.setAttribute("draggable", true);
+                div.addEventListener("dragstart", handler, false);
+            });
+        }
+
         html.find(".tooltip-container").hover(this._onTooltipHover.bind(this));
         const freeText = html.find("textarea.free-text");
         for (let t = 0; t < freeText.length; t++) {

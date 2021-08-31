@@ -17,7 +17,12 @@ export function rollOwnedItem(itemName, rollOptions = false) {
     event = new MouseEvent('click', {});
   };
 
-  itemRolled.roll(event);
+  if(itemRolled.type == "talent") {
+    itemRolled.showItem(true);
+  } else {
+    itemRolled.roll(event);
+  }
+  
 };
 
 /* -------------------------------------------- */
@@ -37,7 +42,7 @@ export async function createAgeMacro(data, slot) {
   const item = data.data;
 
   // Create the macro command
-  const command = `game.ageSystem.rollOwnedItem("${item.name}", true);\n\n/*Change second argument to false to skip Roll Options*/`;
+  const command = `game.ageSystem.rollOwnedItem("${item.name}", false);\n\n/* Second argument - Afficher les 'Roll Options' : true/false */`;
   let macro = game.macros.contents.find(m => (m.name === item.name) && (m.command === command));
   if (!macro) {
     macro = await Macro.create({
