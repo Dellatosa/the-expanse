@@ -87,7 +87,7 @@ Hooks.once("init", async function() {
     // Define Token Icons
     CONFIG.statusEffects = ageSystem.AGEstatusEffects;
     // Changing a few control icons
-    CONFIG.controlIcons.defeated = "systems/the-expanse//systems/the-expanse/resources/imgs/effects/hasty-grave.svg"
+    CONFIG.controlIcons.defeated = "../../systems/the-expanse/resources/imgs/effects/hasty-grave.svg"
 
     // Definition des dés spécifiques
     CONFIG.Dice.terms["n"] = ExpanseNormalDice;
@@ -408,20 +408,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
             dice3d.addDicePreset({
                 type:"dn",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-blanc.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-blanc.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bump.png'
                 ],
                 colorset: "expBlanc",
                 system: "terreAE"
@@ -430,20 +430,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 	        dice3d.addDicePreset({
                 type:"ds",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bleu.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bleu.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bump.png'
                 ],
                 colorset: "expBleu",
                 system: "terreAE"
@@ -456,20 +456,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
             dice3d.addDicePreset({
                 type:"ds",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-blanc.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-blanc.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bump.png'
                 ],
                 colorset: "expBlanc",
                 system: "terreEA"
@@ -478,20 +478,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 	        dice3d.addDicePreset({
                 type:"dn",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bleu.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bleu.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bleu.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bleu.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Terre-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Terre-bump.png'
                 ],
                 colorset: "expBleu",
                 system: "terreEA"
@@ -504,20 +504,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
             dice3d.addDicePreset({
                 type:"dn",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-rouge.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-rouge.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-bump.png'
                 ],
                 colorset: "expRouge",
                 system: "marsRN"
@@ -526,20 +526,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
             dice3d.addDicePreset({
                 type:"ds",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-noir.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-noir.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-bump.png'
                 ],
                 colorset: "expNoir",
                 system: "marsRN"
@@ -552,20 +552,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
             dice3d.addDicePreset({
                 type:"ds",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-rouge.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-rouge.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-rouge.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-rouge.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-bump.png'
                 ],
                 colorset: "expRouge",
                 system: "marsNR"
@@ -574,20 +574,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
             dice3d.addDicePreset({
                 type:"dn",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-noir.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-noir.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Mars-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Mars-bump.png'
                 ],
                 colorset: "expNoir",
                 system: "marsNR"
@@ -600,20 +600,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
             dice3d.addDicePreset({
                 type:"dn",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-blanc.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-blanc.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
                 ],
                 colorset: "expBlanc",
                 system: "ceintureBN"
@@ -622,20 +622,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 	        dice3d.addDicePreset({
                 type:"ds",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-noir.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-noir.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
                 ],
                 colorset: "expNoir",
                 system: "ceintureBN"
@@ -648,20 +648,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
             dice3d.addDicePreset({
                 type:"ds",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-blanc.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-blanc.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-blanc.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-blanc.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
                 ],
                 colorset: "expBlanc",
                 system: "ceintureNB"
@@ -670,20 +670,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 	        dice3d.addDicePreset({
                 type:"dn",
                 labels:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-noir.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-noir.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-noir.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-noir.png'
                 ],
                 bumpMaps:[
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
-                    '/systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/1-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/2-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/3-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/4-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/5-Ceinture-bump.png',
+                    '../../systems/the-expanse/resources/imgs/expanse-dice/dice-so-nice/6-Ceinture-bump.png'
                 ],
                 colorset: "expNoir",
                 system: "ceintureNB"
