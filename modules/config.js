@@ -205,13 +205,15 @@ const itemIconPath = "systems/the-expanse/resources/imgs/item-icon/";
 ageSystem.itemIcons = {
     "equipment": `${itemIconPath}briefcase.svg`,
     "stunts": `${itemIconPath}split-cross.svg`,
-    "talent": `${itemIconPath}skills.svg`,
+    //"talent": `${itemIconPath}skills.svg`,
+    "talent": `${itemIconPath}Icon_Diamond.png`,
     "power": `${itemIconPath}embrassed-energy.svg`,
     "honorifics": `${itemIconPath}rank-3.svg`,
     "relationship": `${itemIconPath}player-next.svg`,
     "membership": `${itemIconPath}backup.svg`,
     "weapon": `${itemIconPath}fist.svg`,
-    "focus": `${itemIconPath}gift-of-knowledge.svg`,
+    //"focus": `${itemIconPath}gift-of-knowledge.svg`,
+    "focus": `${itemIconPath}Icon_Education.png`,
     "shipfeatures": `${itemIconPath}processor.svg`
 };
 
@@ -224,7 +226,8 @@ ageSystem.actorIcons = {
 
 const uiElementsPath = "systems/the-expanse/resources/imgs/ui-elements/";
 ageSystem.uiElements = {
-    ageRoller: `${uiElementsPath}cube.svg`
+    //ageRoller: `${uiElementsPath}cube.svg`
+    ageRoller: `${uiElementsPath}cubes.png`
 }
 
 const AGEstatusEffectsPath = "systems/the-expanse/resources/imgs/effects/";
