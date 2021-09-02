@@ -87,7 +87,9 @@ Hooks.once("init", async function() {
     // Define Token Icons
     CONFIG.statusEffects = ageSystem.AGEstatusEffects;
     // Changing a few control icons
-    CONFIG.controlIcons.defeated = "../../systems/the-expanse/resources/imgs/effects/hasty-grave.svg"
+    let prefix = "";
+    if(game.data.options.routePrefix) prefix = `/${game.data.options.routePrefix}`;
+    CONFIG.controlIcons.defeated = `${prefix}/systems/the-expanse/resources/imgs/effects/hasty-grave.svg`;
 
     // Definition des dés spécifiques
     CONFIG.Dice.terms["n"] = ExpanseNormalDice;
